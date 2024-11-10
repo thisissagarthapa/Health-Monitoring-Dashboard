@@ -1,0 +1,118 @@
+
+{% extends "base/base.html" %}
+{% load static %}
+{% block title %}
+    Health Monitoring System
+{% endblock title %}
+{% block content %}
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Track Your Health, Transform Your Life</h1>
+    <p>Monitor vital health metrics, spot trends, and get personalized recommendations to achieve a healthier you.</p>
+    <div class="hero-buttons">
+      <a href="#features" class="btn-primary">Get Started</a>
+      <a href="#about" class="btn-secondary">Learn More</a>
+    </div>
+  </section>
+
+
+   <!-- Features Section -->
+  <section id="features" class="features">
+    <h2>Features</h2>
+    <div class="feature-grid">
+      <div class="feature">
+        <h3>Real-Time Health Tracking</h3>
+        <p>Log your health metrics like heart rate, blood pressure, and weight.</p>
+      </div>
+      <div class="feature">
+        <h3>Data Visualization</h3>
+        <p>Track your progress over time with interactive charts and graphs.</p>
+      </div>
+      <div class="feature">
+        <h3>Personalized Insights</h3>
+        <p>Get actionable tips and recommendations tailored to your health.</p>
+      </div>
+      <div class="feature">
+        <h3>Machine Learning Predictions</h3>
+        <p>Receive alerts for potential health risks based on your data.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" class="how-it-works">
+    <h2>How It Works</h2>
+    <p>Our platform integrates seamlessly with your devices to collect and analyze your health data.</p>
+    <p>Get real-time updates and personalized insights delivered directly to your dashboard.</p>
+  </section>
+
+ <!-- Testimonials Section -->
+<section id="testimonials" class="testimonials py-5">
+    <div class="container text-center">
+        <h2 class="display-4 mb-5 text-muted">What Our Users Say</h2>
+
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+                <!-- Testimonial 1 -->
+                <div class="carousel-item active">
+                    <div class="testimonial-item p-4 bg-light text-dark rounded border mx-auto" style="max-width: 600px;">
+                        <img src="{% static 'image/sagar.jpg' %}" alt="Sagar Thapa" class="rounded-circle mb-3" width="80">
+                        <blockquote class="blockquote">
+                            <p class="mb-4">"This app has truly changed my life! Tracking my health and getting insights has never been easier."</p>
+                        </blockquote>
+                        <h5 class="fw-bold text-wrap" style="white-space: nowrap;">Sagar Thapa</h5>
+                        <footer class="blockquote-footer text-muted">Fitness Enthusiast</footer>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="carousel-item">
+                    <div class="testimonial-item p-4 bg-light text-dark rounded border mx-auto" style="max-width: 600px;">
+                        <img src="{% static 'image/sleep.webp' %}" alt="Rajdeep Karki" class="rounded-circle mb-3" width="80">
+                        <blockquote class="blockquote">
+                            <p class="mb-4">"I love the data visualization features. They help me see my progress in a clear and motivating way!"</p>
+                        </blockquote>
+                        <h5 class="fw-bold text-wrap" style="white-space: nowrap;">Rajdeep Karki</h5>
+                        <footer class="blockquote-footer text-muted">Health Coach</footer>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="carousel-item">
+                    <div class="testimonial-item p-4 bg-light text-dark rounded border mx-auto" style="max-width: 600px;">
+                        <img src="{% static 'image/checkup.webp' %}" alt="Anisha Shrestha" class="rounded-circle mb-3" width="80">
+                        <blockquote class="blockquote">
+                            <p class="mb-4">"The personalized insights have been a game-changer. I feel more in control of my health journey."</p>
+                        </blockquote>
+                        <h5 class="fw-bold text-wrap" style="white-space: nowrap;">Anisha Shrestha</h5>
+                        <footer class="blockquote-footer text-muted">Yoga Practitioner</footer>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Carousel Indicators (simple) -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active bg-secondary" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" class="bg-secondary" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" class="bg-secondary" aria-label="Slide 3"></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Include Bootstrap for carousel functionality -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Security Section -->
+  <section id="security" class="security">
+    <h2>Security</h2>
+    <p>Your health data is protected with the highest security standards.</p>
+    <p>We use encryption and secure access protocols to ensure your information is safe.</p>
+  </section>
+
+{% endblock content %}
+

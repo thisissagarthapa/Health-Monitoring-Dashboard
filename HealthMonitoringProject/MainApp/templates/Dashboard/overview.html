@@ -1,0 +1,56 @@
+{% extends "Dashboard/dashboardBase.html" %}
+{% load static %}
+{% block title %}
+  Overview
+{% endblock title %}
+  
+{% block content %}
+  <div class="container mt-4">
+    <h1 class="mb-4">Overview</h1>
+    <p>
+      Welcome to the Health Monitoring Dashboard! This platform is designed to help you track and manage your health effectively. By integrating various health metrics, our dashboard provides a comprehensive overview of your well-being.
+    </p>
+    
+    <h2 class="feature-heading">Key Features:</h2>
+    <div class="features">
+      <div class="feature">
+        <img src="{% static 'image/realtime.webp' %}" alt="Real-time Health Metrics" class="img-medium" />
+        <h3>Real-time Health Metrics</h3>
+        <p>Monitor your heart rate, blood pressure, oxygen saturation, and more in real-time.</p>
+      </div>
+      <div class="feature">
+        <img src="{% static 'image/recommendation.webp' %}" alt="Personalized Recommendations" class="img-medium" />
+        <h3>Personalized Recommendations</h3>
+        <p>Get tailored health recommendations based on your data.</p>
+      </div>
+      <div class="feature">
+        <img src="{% static 'image/squats.jpg' %}" alt="Exercise Tracking" class="img-medium" />
+        <h3>Exercise Tracking</h3>
+        <p>Keep track of your physical activities and stay motivated with our exercise library.</p>
+      </div>
+      <div class="feature">
+        <img src="{% static 'image/exercise.webp' %}" alt="Health History" class="img-medium" />
+        <h3>Health History</h3>
+        <p>Access your health data history for better insights and trends over time.</p>
+      </div>
+      <div class="feature">
+        <img src="{% static 'image/reports.webp' %}" alt="Reports & Downloads" class="img-medium" />
+        <h3>Reports & Downloads</h3>
+        <p>Generate detailed health reports and download them for your records.</p>
+      </div>
+    </div>
+
+    <h2>Benefits:</h2>
+    <p>
+      Using the Health Monitoring Dashboard, you can take charge of your health journey, identify potential health issues early, and make informed decisions about your well-being. Whether you are managing a chronic condition or aiming for a healthier lifestyle, our dashboard is your reliable companion.
+    </p>
+  </div>
+
+  <style>
+    .img-medium {
+      width: 200px; /* Increased width */
+      height: 150px; /* Increased height */
+      object-fit: cover; /* Maintain aspect ratio and cover the area */
+    }
+  </style>
+{% endblock content %}

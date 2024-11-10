@@ -1,0 +1,57 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}
+    Working   
+{% endblock title %}
+
+{% block content %}
+<!-- How It Works Section -->
+<section id="how-it-works" class="how-it-works py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="display-4 mb-4">How It Works</h2>
+        <p class="lead mb-5">Our platform integrates seamlessly with your devices to collect and analyze your health data, providing real-time updates and personalized insights.</p>
+        
+        <!-- Steps Section -->
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card shadow border-0 h-100 p-4 animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
+                    <div class="card-body">
+                        <div class="icon mb-3">
+                            <i class="bi bi-phone" style="font-size: 2rem; color: #4CAF50;"></i>
+                        </div>
+                        <h5 class="card-title">Connect Devices</h5>
+                        <p class="card-text">Easily link your health devices to our platform and start tracking your health data seamlessly.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow border-0 h-100 p-4 animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+                    <div class="card-body">
+                        <div class="icon mb-3">
+                            <i class="bi bi-bar-chart" style="font-size: 2rem; color: #FF9800;"></i>
+                        </div>
+                        <h5 class="card-title">Analyze Data</h5>
+                        <p class="card-text">Our system analyzes your health metrics and provides insights for better health management.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow border-0 h-100 p-4 animate__animated animate__fadeInUp" style="animation-delay: 0.5s;">
+                    <div class="card-body">
+                        <div class="icon mb-3">
+                            <i class="bi bi-bell" style="font-size: 2rem; color: #2196F3;"></i>
+                        </div>
+                        <h5 class="card-title">Receive Insights</h5>
+                        <p class="card-text">Get real-time health insights directly on your dashboard to make informed decisions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Include Animate.css for animations -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+{% endblock content %}

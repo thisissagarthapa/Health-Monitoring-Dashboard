@@ -1,0 +1,184 @@
+{% extends "Dashboard/dashboardBase.html" %}
+
+{% load static %}
+{% block title %}
+  dashboard
+{% endblock title %}
+
+{% block content %}
+
+
+<style>
+  .img-custom {
+    width: 100%;
+    height: 450px; /* Increased height for larger images */
+    object-fit: cover; /* Ensures the image fills the container without distortion */
+    object-position: top; /* Ensures the top of the image is prioritized */
+  }
+</style>
+
+
+  <!-- Content Area -->
+  <div class="content-area">
+    <h1 class="d-flex justify-content-center align-items-center mt-5">Welcome to the Health Monitoring Dashboard</h1>
+    <!-- Dashboard Section with Health Metrics -->
+    <div class="row mt-4">
+      <!-- Heart Rate Card -->
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card shadow-sm text-center">
+          <div class="card-body">
+            <i class="fas fa-heartbeat fa-3x text-danger mb-3"></i>
+            <h5 class="card-title">Heart Rate</h5>
+            <p class="card-text"><span id="heartRate">75</span> bpm</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blood Pressure Card -->
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card shadow-sm text-center">
+          <div class="card-body">
+            <i class="fas fa-tint fa-3x text-primary mb-3"></i>
+            <h5 class="card-title">Blood Pressure</h5>
+            <p class="card-text"><span id="bloodPressure">120/80</span> mmHg</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Steps Taken Card -->
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card shadow-sm text-center">
+          <div class="card-body">
+            <i class="fas fa-walking fa-3x text-success mb-3"></i>
+            <h5 class="card-title">Steps</h5>
+            <p class="card-text"><span id="steps">10,000</span> steps</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Calories Burned Card -->
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card shadow-sm text-center">
+          <div class="card-body">
+            <i class="fas fa-fire-alt fa-3x text-warning mb-3"></i>
+            <h5 class="card-title">Calories Burned</h5>
+            <p class="card-text"><span id="caloriesBurned">500</span> kcal</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sleep Duration Card -->
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card shadow-sm text-center">
+          <div class="card-body">
+            <i class="fas fa-bed fa-3x text-info mb-3"></i>
+            <h5 class="card-title">Sleep Duration</h5>
+            <p class="card-text"><span id="sleepDuration">7</span> hrs</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Oxygen Saturation Card -->
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card shadow-sm text-center">
+          <div class="card-body">
+            <i class="fas fa-lungs fa-3x text-secondary mb-3"></i>
+            <h5 class="card-title">Oxygen Saturation</h5>
+            <p class="card-text"><span id="oxygenSaturation">98</span>%</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Body Temperature Card -->
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card shadow-sm text-center">
+          <div class="card-body">
+            <i class="fas fa-thermometer-half fa-3x text-danger mb-3"></i>
+            <h5 class="card-title">Body Temperature</h5>
+            <p class="card-text"><span id="bodyTemperature">98.6</span> °F</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- BMI Card -->
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card shadow-sm text-center">
+          <div class="card-body">
+            <i class="fas fa-weight fa-3x text-dark mb-3"></i>
+            <h5 class="card-title">BMI</h5>
+            <p class="card-text"><span id="bmi">22.5</span> kg/m²</p>
+          </div>
+        </div>
+      </div>
+    </div>
+ <!-- Health Monitoring Recommendations Section -->
+  </div>
+  <!-- Health Monitoring Recommendations Section -->
+  <div class="mt-5">
+    <h2 class="d-flex justify-content-center">Health Monitoring Recommendations</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="{% static 'image/hydrated.webp' %}" class="card-img-top img-custom" alt="Stay Hydrated">
+          <div class="card-body">
+            <h5 class="card-title">Stay Hydrated</h5>
+            <p class="card-text">Drinking plenty of water helps maintain optimal health. Aim for at least 8 glasses a day!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="{% static 'image/balancediet.webp' %}" class="card-img-top img-custom" alt="Balanced Diet">
+          <div class="card-body">
+            <h5 class="card-title">Balanced Diet</h5>
+            <p class="card-text">Incorporate a variety of fruits, vegetables, proteins, and whole grains into your meals for better health.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="{% static 'image/checkupregular.webp' %}" class="card-img-top img-custom" alt="Regular Check-ups">
+          <div class="card-body">
+            <h5 class="card-title">Regular Check-ups</h5>
+            <p class="card-text">Schedule routine medical check-ups to monitor your health and catch any issues early.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="{% static 'image/health.webp' %}" class="card-img-top img-custom" alt="Mental Health">
+          <div class="card-body">
+            <h5 class="card-title">Prioritize Mental Health</h5>
+            <p class="card-text">Engage in activities that promote relaxation and mental well-being, such as meditation or journaling.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="{% static 'image/sleep.webp' %}" class="card-img-top img-custom" alt="Get Enough Sleep">
+          <div class="card-body">
+            <h5 class="card-title">Get Enough Sleep</h5>
+            <p class="card-text">Aim for 7-9 hours of quality sleep each night to support overall health and recovery.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="{% static 'image/stress.webp' %}" class="card-img-top img-custom" alt="Manage Stress">
+          <div class="card-body">
+            <h5 class="card-title">Manage Stress</h5>
+            <p class="card-text">Practice stress management techniques like yoga or deep-breathing exercises to improve your health.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
+ 
+

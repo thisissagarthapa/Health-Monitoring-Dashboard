@@ -1,0 +1,132 @@
+{% extends "Dashboard/dashboardBase.html" %}
+
+{% load static %}
+{% block title %}
+  Recommendation
+{% endblock title %}
+
+{% block content %}
+<div class="container mt-5">
+    <!-- Header Section -->
+    <div class="text-center fade-in">
+        <h2 class="display-5 text-uppercase" style="color: #2c3e50;">Health Status for <span class="text-info">{{ name }}</span></h2>
+        <p class="lead" style="color: #34495e;">Status: <span class="font-weight-bold text-warning">{{ status }}</span></p>
+    </div>
+
+    <!-- Recommendations Section -->
+    <div class="d-flex justify-content-center mt-4">
+        <div class="recommendation-card shadow-lg">
+            <div class="recommendation-header">
+                <h3>Recommendations for {{ name }}</h3>
+            </div>
+            <div class="recommendation-body">
+                <ul class="recommendation-list">
+                    {% for recommendation in recommendations %}
+                        <li class="recommendation-item">
+                            <span class="icon"><i class="fas fa-check-circle"></i></span> {{ recommendation}}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+<!-- Custom Styles -->
+{% block extra_css %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+    /* Base Styling */
+    body {
+        background-color: #ecf0f1;
+        color: #2c3e50;
+    }
+    .text-info {
+        color: #3498db !important;
+    }
+    .text-warning {
+        color: #f39c12 !important;
+    }
+
+    /* Card Styling */
+    .recommendation-card {
+        background-color: #fff;
+        border-radius: 15px;
+        padding: 20px;
+        width: 100%;
+        max-width: 500px;
+        color: #2c3e50;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    .recommendation-header {
+        text-align: center;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #3498db;
+    }
+    .recommendation-header h3 {
+        font-size: 1.5rem;
+        color: #3498db;
+        text-transform: uppercase;
+        margin: 0;
+    }
+
+    /* List Styling */
+    .recommendation-list {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 15px;
+    }
+    .recommendation-item {
+        display: flex;
+        align-items: center;
+        font-size: 1rem;
+        padding: 15px 10px; /* Increased padding for larger size */
+        margin-bottom: 10px; /* Space between items */
+        border-radius: 12px; /* Slightly rounded corners */
+        background-color: #f8f9fa; /* Light background for items */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+        transition: transform 0.2s; /* Smooth hover effect */
+    }
+
+    .recommendation-item:hover {
+        transform: translateY(-2px); /* Lift effect on hover */
+    }
+
+    .icon {
+        color: #f39c12;
+        margin-right: 10px;
+        font-size: 1.2rem;
+    }
+
+    /* Animations */
+    .fade-in {
+        opacity: 0;
+        animation: fadeIn 1.2s forwards;
+    }
+    @keyframes fadeIn {
+        to { opacity: 1; }
+    }
+    .recommendation-card {
+        transform: scale(0.95);
+        opacity: 0;
+        animation: scaleIn 1s forwards;
+        animation-delay: 0.2s;
+    }
+    @keyframes scaleIn {
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+</style>
+{% endblock extra_css %}
+
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+{% block extra_js %}
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% endblock extra_js %}

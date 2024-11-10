@@ -1,0 +1,30 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block title %}
+Register
+{% endblock title %}
+
+{% block content %}
+    
+    <section class="register">
+    <div class="container-register">
+        <form method="POST" action="{% url 'register' %}" class="form">
+            {% csrf_token %}
+            <h1 class="text-center">Register</h1>
+            <a href="{% url 'health' %}"><h1 class="cross"><i class="fa-regular fa-circle-xmark"></i></h1></a>
+            <input placeholder="Enter your fullname" name="name" class="input" type="text">
+            <input placeholder="Enter your username" name="username" class="input" type="text">
+            <input placeholder="Enter your email" name="email" class="input" type="email">
+            <input placeholder="Password" class="input" name="password" type="password">
+            <input placeholder="Confirm Password" class="input" name="password1" type="password">
+            <button type="submit">Register</button>
+            <div class="signup">
+                <p>Already registered?</p>
+                <a href="{% url 'log_in' %}">Sign In</a>
+            </div>
+        </form>
+    </div>
+    </section>
+{% endblock content %}
+
+<!-- 

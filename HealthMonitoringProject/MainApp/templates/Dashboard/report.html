@@ -1,0 +1,50 @@
+{% extends "Dashboard/dashboardBase.html" %} 
+{% block title %} Report {% endblock title %} 
+
+{% block content %}
+<section class="health-history d-flex align-items-center justify-content-center  mt-5" style="min-height: 100vh;">
+  <div class="container">
+    <h1 class="text-center text-success">Report History</h1>
+
+    <!-- Make the table responsive on small screens -->
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Heart Rate</th>
+            <th>Blood Pressure</th>
+            <th>Sleep Duration</th>
+            <th>Oxygen Saturation</th>
+            <th>Body Temperature</th>
+            <th>BMI</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for entry in entries %}
+          <tr>
+            <td>{{ entry.data_entry.name }}</td>
+            <td>{{ entry.data_entry.heart_rate }}</td>
+            <td>{{ entry.data_entry.blood_pressure }}</td>
+            <td>{{ entry.data_entry.sleep_duration }}</td>
+            <td>{{ entry.data_entry.oxygen_saturation }}</td>
+            <td>{{ entry.data_entry.body_temperature }}</td>
+            <td>{{ entry.data_entry.bmi }}</td>
+            <td>{{ entry.status }}</td>
+            <td>
+              <a
+                href="{% url 'generate_report' entry.data_entry.id %}"
+                class="btn btn-primary"
+              >Download Report</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

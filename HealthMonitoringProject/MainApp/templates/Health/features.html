@@ -1,0 +1,35 @@
+{% extends "base/base.html" %}  <!-- Extend the base template -->
+{% load static %}
+
+{% block title %}
+    Feature   
+{% endblock title %}
+
+  {% block content %}
+
+  
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <h2>Features</h2>
+    <div class="feature-grid">
+      <div class="feature">
+        <h3>Real-Time Health Tracking</h3>
+        <p>Log your health metrics like heart rate, blood pressure, and weight.</p>
+      </div>
+      <div class="feature">
+        <h3>Data Visualization</h3>
+        <p>Track your progress over time with interactive charts and graphs.</p>
+      </div>
+      <div class="feature">
+        <h3>Personalized Insights</h3>
+        <p>Get actionable tips and recommendations tailored to your health.</p>
+      </div>
+      <div class="feature">
+        <h3>Machine Learning Predictions</h3>
+        <p>Receive alerts for potential health risks based on your data.</p>
+      </div>
+    </div>
+  </section>
+
+  {% endblock content %}
+

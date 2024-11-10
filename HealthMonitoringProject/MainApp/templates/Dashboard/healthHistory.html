@@ -1,0 +1,45 @@
+{% extends "Dashboard/dashboardBase.html" %}
+{% load static %}
+{% block title %}
+  Health History
+{% endblock title %}
+
+{% block content %}
+<section class="health-history" style="min-height: calc(100vh - 200px);"> <!-- Adjust the height based on your footer -->
+  <div class="container">
+    <h1 class="text-success mb-4" style="margin-top: 80px;">Health History</h1> <!-- Add top margin to push below navbar -->
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+          <tr class="text-center">
+            <th>Name</th>
+            <th>Heart Rate (bpm)</th>
+            <th>Blood Pressure (mmHg)</th>
+            <th>Sleep Duration (hrs)</th>
+            <th>Oxygen Saturation (%)</th>
+            <th>Body Temperature (°F)</th>
+            <th>BMI</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for record in health_records %}
+            <tr class="text-center">
+              <td>{{ record.name }}</td>
+              <td>{{ record.heart_rate }}</td>
+              <td>{{ record.blood_pressure }}</td>
+              <td>{{ record.sleep_duration }}</td>
+              <td>{{ record.oxygen_saturation }}</td>
+              <td>{{ record.body_temperature }}</td>
+              <td>{{ record.bmi }}</td>
+            </tr>
+          {% empty %}
+            <tr>
+              <td colspan="8" class="text-center">No health history available.</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+{% endblock content %}

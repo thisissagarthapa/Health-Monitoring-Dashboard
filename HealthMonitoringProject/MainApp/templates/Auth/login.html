@@ -1,0 +1,46 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block title %}
+Login
+{% endblock title %}
+
+
+
+{% block content %}
+  
+ <!-- Alertify for form -->
+    {% if messages %} {% for message in messages %}
+    <script>
+        alertify.set("notifier", "position", "top-left");
+        alertify.success("{{ message }}");
+    </script>
+    {% endfor %} {% endif %}
+    <section class="register">
+    <div class="container-register">
+        <form method="POST" action="{% url 'log_in' %}" class="form">
+            {% csrf_token %}
+            <h1 class="text-center text-success">Login</h1>
+            <a href="{% url 'health' %}"><h1 class="cross"><i class="fa-regular fa-circle-xmark"></i></h1></a>
+            <input placeholder="Enter your username" name="username" type="text" class="input" required>
+            <input placeholder="Enter your password" name="password" type="password" class="input" required>
+            <button type="submit">Login</button>
+            <div class="signup">
+                <p>Don't have an account? <a href="{% url 'register' %}">Sign up</a></p>
+            </div>
+            <div class="forgot">
+                <p>Forgot your password? <a class="text-success"  href="{% url 'password_reset' %}">Click here</a></p>
+            </div>
+        </form>
+    </div>
+    </section>
+
+
+{% endblock content %}
+
+
+
+
+
+
+
+
