@@ -159,7 +159,7 @@ def generate_report(request, data_entry_id):
 
 @login_required(login_url='log_in')
 def dataEntry(request):
-    model_path = os.path.join(settings.BASE_DIR, 'MainApp', 'ML', 'model_voting_classifier.pkl')
+    model_path = os.path.join(settings.BASE_DIR, 'MainApp', 'ML', 'Model_Voting_Classifier.pkl')
     
     try:
         model = joblib.load(model_path)
